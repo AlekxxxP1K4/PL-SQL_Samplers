@@ -1,0 +1,25 @@
+DECLARE
+  vNumber1  NUMBER(11,2) := 2000;
+  vNumber2  NUMBER(11,2) := 5000;
+  vMedia    NUMBER(11,2);
+BEGIN
+  vMedia := (vNumber1 + vNumber2) / 2;
+EXCEPTION
+  WHEN OTHERS 
+  THEN 
+    DBMS_OUTPUT.PUT_LINE('Erro Oracle: ' || SQLCODE || SQLERRM);
+END;
+
+/*
+DECLARE
+  VNUMBER1  NUMBER(11,2) := 2000;
+  VNUMBER2  NUMBER(11,2) := 5000;
+  VMEDIA     NUMBER(11,2);
+BEGIN
+  VMEDIA := (VNUMBER1 + VNUMBER2) / 2;
+EXCEPTION
+  WHEN OTHERS 
+  THEN 
+    DBMS_OUTPUT.PUT_LINE('Erro Oracle: ' || SQLCODE || SQLERRM);
+END;
+*/
