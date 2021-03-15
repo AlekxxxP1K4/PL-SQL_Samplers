@@ -1,0 +1,22 @@
+DECLARE
+  CURSOR  EMPLOYEES_CURSOR 
+         (PDEPARTMENT_ID NUMBER,
+          PJOB_ID VARCHAR2)
+  IS
+  SELECT  *
+  FROM    EMPLOYEES
+  WHERE   DEPARTMENT_ID = PDEPARTMENT_ID  AND
+          JOB_ID = PJOB_ID;
+BEGIN
+  FOR EMPLOYEES_RECORD IN  EMPLOYEES_CURSOR (60, 'IT_PROG')
+  LOOP
+     DBMS_OUTPUT.PUT_LINE(EMPLOYEES_RECORD.EMPLOYEE_ID || ' - ' ||
+                         EMPLOYEES_RECORD.FIRST_NAME || ' ' || 
+                         EMPLOYEES_RECORD.LAST_NAME || ' - ' ||
+                         EMPLOYEES_RECORD.DEPARTMENT_ID || ' - ' ||
+                         EMPLOYEES_RECORD.JOB_ID || ' - ' ||
+                         EMPLOYEES_RECORD.PHONE_NUMBER || ' - ' ||
+                         LTRIM(TO_CHAR(EMPLOYEES_RECORD.SALARY, 'L99G999G999D99')));
+
+  END LOOP;
+END;
