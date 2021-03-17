@@ -1,0 +1,4 @@
+create or replace 
+PACKAGE BODY PACKAGE1 AS
+
+END PACKAGE1;
