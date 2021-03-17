@@ -1,0 +1,28 @@
+DECLARE
+  FUNCTION multiply(num1 NUMBER) RETURN NUMBER;
+  PROCEDURE donothing(num INTEGER);
+  PROCEDURE empty1;
+BEGIN	
+	NULL;
+END;
+
+DECLARE
+  FUNCTION multiply(num1 NUMBER) RETURN NUMBER IS
+  BEGIN
+    RETURN num1;  
+  
+  END multiply;
+  
+  PROCEDURE donothing(num INTEGER) IS
+  BEGIN
+    DBMS_OUTPUT.PUT_LINE(num);
+  END donothing;
+  
+  PROCEDURE empty1 IS
+  BEGIN
+	NULL;
+  END empty1;
+
+BEGIN
+	NULL;
+END;
