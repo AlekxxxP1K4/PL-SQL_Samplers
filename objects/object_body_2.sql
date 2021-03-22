@@ -5,7 +5,6 @@ CREATE OR REPLACE TYPE BODY rectangle AS
   BEGIN
     SELF.length := length;
     SELF.width := width;
--- We compute the area rather than accepting it as a parameter.
     SELF.area := length * width;
     RETURN;
   END;
